@@ -4,12 +4,14 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const dentistRouter = require("./routes/dentistRoutes");
+const appointmentsRouter = require("./routes/appointmentRoutes");
 
 const connectDb = require("./config/db");
 connectDb();
 
 app.use(bodyParser.json());
 app.use('/dentists', dentistRouter);
+app.use('/appointments', appointmentsRouter);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
