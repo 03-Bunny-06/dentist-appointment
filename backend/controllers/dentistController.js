@@ -20,7 +20,7 @@ const createDentistController = async(req, res) => {
             location
         }
 
-        const dentistAlreadyExists = await Dentist.findOne({name: name, clinicName: clinicName});
+        const dentistAlreadyExists = await Dentist.findOne({name: name});
 
         if(dentistAlreadyExists){
             return res.status(409).json({
