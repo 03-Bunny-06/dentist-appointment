@@ -38,3 +38,21 @@ const createDentistController = async(req, res) => {
         })
     }
 }
+
+const getAllDentistsController = async(req, res) => {
+    try{
+        const dentistsData = await Dentist.find({});
+        //const countOfDentists = await Dentist.countDocuments({});
+        res.status(200).json({
+            totalDentists: dentistsData.length,
+            msg: dentistsData
+        })
+    }
+    catch(e){
+
+    }
+}
+
+module.exports = {
+    createDentistController, getAllDentistsController
+}
