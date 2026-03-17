@@ -1,0 +1,41 @@
+const mongoose = require("mongoose");
+const Dentist = require("../models/dentistModel");
+
+const createDentistController = async(req, res) => {
+    try{
+        const photoUrl = req.body.photoUrl;
+        const name = req.body.name;
+        const qualification = req.body.qualification;
+        const yearsOfExperience = req.body.yearsOfExperience;
+        const clinicName = req.body.clinicName;
+        const address = req.body.address;
+        const location = req.body.location;
+
+        const data = {
+            photoUrl,
+            name,
+            qualification,
+            yearsOfExperience,
+            clinicName,
+            address,
+            location
+        }
+
+        const dentistAlreadyExists = await Dentist.findOne({name: name, clinicName: clinicName});
+
+        if(dentistAlreadyExists){
+            return res.status(409).json({
+                msg: "Dentist already exists with this specfic name"
+            })
+        }
+        await Dentist.create(data);
+        res.status(201).json({
+            msg: "Dentist created successfully"
+        })
+    }
+    catch(e){
+        res.status(500).json({
+            error: e.message
+        })
+    }
+}
