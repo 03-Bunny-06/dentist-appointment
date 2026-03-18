@@ -1,19 +1,18 @@
-# Dentist Appointment 🍽️
+# Dentist Appointment⚕️
 
-A robust RESTful backend service for managing restaurant menus and orders. This API provides functionality for CRUD operations, searching, filtering, availability control, and status-tracked order handling.
+A backend service designed to manage dentist records and appointment scheduling efficiently. This system provides RESTful APIs for handling dentists, appointments, and admin authentication, enabling seamless clinic management operations.
 
 **Live Demo:** [https://api-dentist-appointment.onrender.com](https://api-dentist-appointment.onrender.com/dentists/)  
 
 ## Features⚡
 
--   **Menu Management:** Full CRUD (Create, Read, Update, Delete) functionality for menu items.
--   **Order Handling:** Create new orders, retrieve order lists, view specific order details, and update order statuses.
--   **Advanced Search & Filtering:**
-    -   Filter menu items by `category`, `availability`, and `price`.
-    -   Perform text-based searches on menu item `name` and `ingredients`.
--   **Pagination:** Efficiently query large sets of order data using page and limit parameters.
--   **Availability Control:** Easily toggle the availability of any menu item.
--   **API Documentation:** Interactive API documentation powered by Swagger (OpenAPI) is available at the `/api-docs` endpoint.
+- **Dentist Management:** Create new dentist profiles and retrieve the complete list of all registered dentists.
+- **Appointment Handling:** Create new appointments, fetch all appointments, and maintain structured scheduling data.
+- **Admin Authentication:** Secure admin signup and signin functionality using protected routes.
+- **Role-Based Access:** Only authenticated admins can access dentist and appointment data through restricted endpoints.
+- **Data Viewing:** Easily retrieve all dentists and all appointments with clean, well-defined API routes.
+- **Error Handling:** Ensures consistent API responses during dentist or appointment creation.
+- **Scalable API Structure:** RESTful endpoints designed for smooth integration with any frontend or mobile application.
 
 ## Tech Stack 🚀
 
