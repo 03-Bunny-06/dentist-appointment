@@ -50,7 +50,7 @@ const getAllAppointmentsController = async(req, res) => {
         const appointmentsData = await Appointment.find({});
         res.status(200).json({
             totalAppointments: appointmentsData.length,
-            msg: appointmentsData
+            data: appointmentsData
         })
     }
     catch(e){

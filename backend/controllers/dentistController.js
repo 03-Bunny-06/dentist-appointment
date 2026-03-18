@@ -45,7 +45,7 @@ const getAllDentistsController = async(req, res) => {
         //const countOfDentists = await Dentist.countDocuments({});
         res.status(200).json({
             totalDentists: dentistsData.length,
-            msg: dentistsData
+            data: dentistsData
         })
     }
     catch(e){
